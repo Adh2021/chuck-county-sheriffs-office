@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CCSO: County Command</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="hud-top">
+            <div class="meter-group">
+                <label>TRUST</label>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar-trust" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="meter-group">
+                <label>STATS</label>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar-stats" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="meter-group">
+                <label>SAFETY</label>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar-safety" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="meter-group">
+                <label>BUDGET</label>
+                <div class="progress-container">
+                    <div class="progress-bar" id="bar-budget" style="width: 50%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-area" id="card-display">
+            <div class="scenario-header">
+                <span id="turn-counter">SHIFT: 1</span>
+            </div>
+            <div class="scenario-image" id="scenario-img">
+                ⭐
+            </div>
+            <div class="scenario-text" id="scenario-text">
+                Loading CCSO Dispatch...
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-left" class="choice-btn left">
+                <span class="btn-label" id="label-left">OPTION A</span>
+                <div class="impact-container" id="impact-left"></div>
+            </button>
+            <button id="btn-right" class="choice-btn right">
+                <span class="btn-label" id="label-right">OPTION B</span>
+                <div class="impact-container" id="impact-right"></div>
+            </button>
+        </div>
+        
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h1 id="death-title">FIRED</h1>
+                <p id="death-reason">The Sheriff relieved you of duty.</p>
+                <button class="restart-btn" onclick="location.reload()">START NEW SHIFT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.log(err));
+        }
+    </script>
+</body>
+</html>

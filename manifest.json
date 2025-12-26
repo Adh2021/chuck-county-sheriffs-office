@@ -1,0 +1,21 @@
+{
+  "name": "CCSO Command",
+  "short_name": "CCSO Game",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#004d00",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192.png?text=CCSO",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512.png?text=CCSO",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
